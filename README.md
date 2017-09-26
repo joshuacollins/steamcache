@@ -16,10 +16,14 @@ Run the steamcache container with the using the following to allow TCP port 80 (
 docker run \
   --restart unless-stopped \
   --name steamcache \
-  -p 192.168.1.5:80:80 \
+  -d \
+  -p <Your host IP>:80:80 \
   -v /cache/steam/data:/data/cache \
   -v /cache/steam/logs:/data/logs \
   steamcache/steamcache:latest
+
+(old outdated, advice)
+docker run --name steamcache --restart=always -d -p <host ip here>:80:80 steamcache/steamcache:latest
 ```
 ## Quick Explaination
 
